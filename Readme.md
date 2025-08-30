@@ -22,6 +22,6 @@ To create and insert a new element into the DOM:
  Difference between preventDefault() and stopPropagation() methods:
  preventDefault()
 Stops the browser's default action.
+ 
 stopPropagation()
-
 Stops the event from bubbling up to parent elements.

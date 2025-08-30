@@ -1,4 +1,4 @@
-let call_list = [];
+
 // heart icon features
 let hearts = document.getElementsByClassName("heart");
 for (const heart of hearts) {
@@ -22,10 +22,10 @@ for (const call of calls) {
    
     let service = card.querySelector(".service-name") 
       ? card.querySelector(".service-name").innerText 
-      : card.querySelector("h2.font-bold").innerText;
+       : card.querySelector(".service-name").innerText;
     let number = card.querySelector(".service-num") 
-      ? card.querySelector(".service-num").innerText 
-      : card.querySelector("h1.font-bold").innerText;
+      ? card.querySelector(".service-num").innerText
+      : card.querySelector(".service-num").innerText;
 
     // Check coins
     if (countOfCoins < 20) {
@@ -33,10 +33,8 @@ for (const call of calls) {
       return;
     }
 
-    // Show alert with service name and number
     alert(`Calling ${service} at ${number}`);
 
-    // Reduce coins
     countOfCoins -= 20;
     coins.innerText = countOfCoins;
 
@@ -65,17 +63,16 @@ document.getElementById("clear-btn").addEventListener("click", function () {
 let copyBtns = document.getElementsByClassName("copy-btn");
 for (const copyBtn of copyBtns) {
   copyBtn.addEventListener("click", function () {
-    // Find the parent card
+  
     const card = copyBtn.closest('.card');
-    // Get the hotline number
+   
     let number = card.querySelector(".service-num")
       ? card.querySelector(".service-num").innerText
-      : card.querySelector("h1.font-bold").innerText;
+      : card.querySelector(".service-num").innerText;
 
-    // Copy to clipboard
+   
     navigator.clipboard.writeText(number);
 
-    // Increase copy count
     let copyCountElem = document.getElementById("copy-count");
     let copyCount = parseInt(copyCountElem.innerText);
     copyCount++;
